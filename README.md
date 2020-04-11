@@ -53,4 +53,4 @@ El patrón ReactiveX o Observable tiene 3 conceptos fundamentales que lo compone
 
 Los Observables son objetos que puede emitir multiples valores, uno o ninguno. En este punto debemos saber que el observable `obs$` puede emitir valores usando el metodo `next([valor])`el cual se verá reflejado en su salida. Al mismo tiempo, el metodo`complete()` le permite notificar que no emitirá ningun valor más en su salida aunque, puede que el este notificandolos.
 
-! [Observable] (img/Screenshot_2020-04-11 ReactiveX - RxJs De cero hasta los detalles.png)
+! [Observable](img/obser.png)
