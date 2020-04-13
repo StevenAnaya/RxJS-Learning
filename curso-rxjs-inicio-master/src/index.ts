@@ -1,21 +1,12 @@
-import { from } from "rxjs";
+import { fromEvent, interval } from "rxjs";
+import { mergeMap, switchMap } from "rxjs/operators";
 
-const observer = {
-  next: (val) => console.log(val),
-};
+const click$ = fromEvent(document, "click");
+const interval$ = interval(1000);
 
-const generator = function* () {
-  yield 1;
-  yield 2;
-  yield 3;
-  yield 4;
-  yield 5;
-};
-
-const myIterable = generator();
-
-//ejecuta el iterable y me devuelve todos los valores
-from(myIterable).subscribe(observer);
-
-//ejecuta la promesa y me devuelve el resultado
-from(fetch("https://miUrl.com/")).subscribe(observer);
+click$
+  .pipe(
+    switchMap(() => interval$)
+    // mergeMap( () => interval$ ),
+  )
+  .subscribe(console.log);

@@ -1,10 +1,10 @@
 import { Observable, Observer } from "rxjs";
 
 const observer: Observer<any> = {
-   next: value => console.log(value),
-   error: error => console.error(error),
-   complete: () => console.info('Complete');
-}
+  next: (value) => console.log(value),
+  error: (error) => console.error(error),
+  complete: () => console.info("Complete"),
+};
 
 const obs$ = new Observable<string>((subscriber) => {
   subscriber.next("Hola");
@@ -15,7 +15,7 @@ const obs$ = new Observable<string>((subscriber) => {
 
   // Esto genera un error
   let a = undefined;
-  a.nomber = 'nombre';
+  a.nomber = "nombre";
 
   subscriber.complete();
 
